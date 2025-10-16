@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrieren - DuoMaps Team Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-page">
+    <div class="auth-background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <i class="fas fa-comments"></i>
+                <h1>DuoMaps Team Chat</h1>
+            </div>
+
+            <div class="auth-header">
+                <h2>Account erstellen</h2>
+                <p>Trete dem DuoMaps Team bei</p>
+            </div>
+
+            <div id="alert-container"></div>
+
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i>
+                        Benutzername
+                    </label>
+                    <input type="text" id="username" name="username" placeholder="Wähle einen Benutzernamen" required minlength="3" maxlength="20" autocomplete="username">
+                    <small class="form-hint">3-20 Zeichen, nur Buchstaben, Zahlen, _ und -</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        Passwort
+                    </label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" placeholder="Wähle ein sicheres Passwort" required minlength="6" autocomplete="new-password">
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strength-fill"></div>
+                        </div>
+                        <span class="strength-text" id="strength-text">Passwort eingeben</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password-confirm">
+                        <i class="fas fa-lock"></i>
+                        Passwort bestätigen
+                    </label>
+                    <div class="password-input">
+                        <input type="password" id="password-confirm" name="password-confirm" placeholder="Passwort wiederholen" required autocomplete="new-password">
+                        <button type="button" class="toggle-password" onclick="togglePassword('password-confirm')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span>Ich akzeptiere die Nutzungsbedingungen und bestätige, dass ich Teil des <a href="https://duomaps.eu" target="_blank">DuoMaps</a> Teams bin</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full" id="register-btn">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Account erstellen</span>
+                    <div class="spinner" style="display: none;"></div>
+                </button>
+            </form>
+
+            <div class="auth-divider"><span>oder</span></div>
+
+            <div class="auth-footer">
+                <p>Bereits registriert?</p>
+                <a href="login.html" class="btn btn-secondary btn-full">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Anmelden
+                </a>
+            </div>
+
+            <div class="auth-back">
+                <a href="index.html">
+                    <i class="fas fa-arrow-left"></i>
+                    Zurück zur Startseite
+                </a>
+            </div>
+        </div>
+
+        <div class="auth-info">
+            <div class="info-item">
+                <i class="fas fa-check-circle"></i>
+                <h3>Einfach</h3>
+                <p>Registrierung in wenigen Sekunden</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-user-shield"></i>
+                <h3>Privat</h3>
+                <p>Nur für DuoMaps Teammitglieder</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-comments"></i>
+                <h3>Verbunden</h3>
+                <p>Chatte sofort mit deinem Team</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
